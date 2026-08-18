@@ -12,57 +12,11 @@ const SEED_USERS: User[] = [
   { id: 'u5', name: 'Secretaria UniScience', email: 'sec.uniscience@uniape.com', password: 'uniape123', role: 'secretaria', secretariaType: 'UniScience', active: true },
 ];
 
-const SEED_MEMBERS: Member[] = [
-  { id: 'm1', name: 'Carlos Eduardo Mendes', active: true },
-  { id: 'm2', name: 'Larissa Oliveira Santos', active: true },
-  { id: 'm3', name: 'Pedro Henrique Costa', active: true },
-  { id: 'm4', name: 'Fernanda Lima Rocha', active: true },
-  { id: 'm5', name: 'Rafael Sousa Alves', active: true },
-  { id: 'm6', name: 'Juliana Martins Pereira', active: true },
-  { id: 'm7', name: 'Lucas Rodrigues Neves', active: true },
-  { id: 'm8', name: 'Beatriz Carvalho Dias', active: true },
-];
+const SEED_MEMBERS: Member[] = [];
 
-const SEED_EVENTS: Event[] = [
-  { id: 'e1', name: 'Palestra: Periodontia Regenerativa', date: '2026-03-10', hours: 2, semester: '2026.1', createdBy: 'u2', qrCode: 'qr_e1' },
-  { id: 'e2', name: 'Workshop: Empreendedorismo em Odontologia', date: '2026-03-24', hours: 4, semester: '2026.1', createdBy: 'u3', qrCode: 'qr_e2' },
-  { id: 'e3', name: 'Seminário: Inovação Clínica', date: '2026-04-07', hours: 3, semester: '2026.1', createdBy: 'u4', qrCode: 'qr_e3' },
-  { id: 'e4', name: 'Mesa Redonda: Casos Clínicos em Periodontia', date: '2026-04-21', hours: 2, semester: '2026.1', createdBy: 'u2', qrCode: 'qr_e4' },
-  { id: 'e5', name: 'Simpósio de Implantodontia', date: '2026-05-05', hours: 6, semester: '2026.1', createdBy: 'u5', qrCode: 'qr_e5' },
-];
+const SEED_EVENTS: Event[] = [];
 
-const SEED_ATTENDANCES: Attendance[] = [
-  { id: 'a1', eventId: 'e1', memberId: 'm1', timestamp: '2026-03-10T09:00:00' },
-  { id: 'a2', eventId: 'e1', memberId: 'm2', timestamp: '2026-03-10T09:05:00' },
-  { id: 'a3', eventId: 'e1', memberId: 'm3', timestamp: '2026-03-10T09:10:00' },
-  { id: 'a4', eventId: 'e1', memberId: 'm4', timestamp: '2026-03-10T09:15:00' },
-  { id: 'a5', eventId: 'e1', memberId: 'm5', timestamp: '2026-03-10T09:20:00' },
-  { id: 'a6', eventId: 'e1', memberId: 'm6', timestamp: '2026-03-10T09:25:00' },
-  { id: 'a7', eventId: 'e2', memberId: 'm1', timestamp: '2026-03-24T09:00:00' },
-  { id: 'a8', eventId: 'e2', memberId: 'm2', timestamp: '2026-03-24T09:05:00' },
-  { id: 'a9', eventId: 'e2', memberId: 'm3', timestamp: '2026-03-24T09:10:00' },
-  { id: 'a10', eventId: 'e2', memberId: 'm5', timestamp: '2026-03-24T09:20:00' },
-  { id: 'a11', eventId: 'e2', memberId: 'm7', timestamp: '2026-03-24T09:30:00' },
-  { id: 'a12', eventId: 'e2', memberId: 'm8', timestamp: '2026-03-24T09:35:00' },
-  { id: 'a13', eventId: 'e3', memberId: 'm1', timestamp: '2026-04-07T09:00:00' },
-  { id: 'a14', eventId: 'e3', memberId: 'm2', timestamp: '2026-04-07T09:05:00' },
-  { id: 'a15', eventId: 'e3', memberId: 'm4', timestamp: '2026-04-07T09:15:00' },
-  { id: 'a16', eventId: 'e3', memberId: 'm6', timestamp: '2026-04-07T09:25:00' },
-  { id: 'a17', eventId: 'e3', memberId: 'm7', timestamp: '2026-04-07T09:30:00' },
-  { id: 'a18', eventId: 'e4', memberId: 'm1', timestamp: '2026-04-21T09:00:00' },
-  { id: 'a19', eventId: 'e4', memberId: 'm2', timestamp: '2026-04-21T09:05:00' },
-  { id: 'a20', eventId: 'e4', memberId: 'm3', timestamp: '2026-04-21T09:10:00' },
-  { id: 'a21', eventId: 'e4', memberId: 'm5', timestamp: '2026-04-21T09:20:00' },
-  { id: 'a22', eventId: 'e4', memberId: 'm8', timestamp: '2026-04-21T09:35:00' },
-  { id: 'a23', eventId: 'e5', memberId: 'm1', timestamp: '2026-05-05T09:00:00' },
-  { id: 'a24', eventId: 'e5', memberId: 'm2', timestamp: '2026-05-05T09:05:00' },
-  { id: 'a25', eventId: 'e5', memberId: 'm3', timestamp: '2026-05-05T09:10:00' },
-  { id: 'a26', eventId: 'e5', memberId: 'm4', timestamp: '2026-05-05T09:15:00' },
-  { id: 'a27', eventId: 'e5', memberId: 'm5', timestamp: '2026-05-05T09:20:00' },
-  { id: 'a28', eventId: 'e5', memberId: 'm6', timestamp: '2026-05-05T09:25:00' },
-  { id: 'a29', eventId: 'e5', memberId: 'm7', timestamp: '2026-05-05T09:30:00' },
-  { id: 'a30', eventId: 'e5', memberId: 'm8', timestamp: '2026-05-05T09:35:00' },
-];
+const SEED_ATTENDANCES: Attendance[] = [];
 
 function makeSeedFolders(users: User[]): Folder[] {
   return users.map(u => ({
