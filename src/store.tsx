@@ -29,6 +29,37 @@ function makeSeedFolders(users: User[]): Folder[] {
   }));
 }
 
+// ── One-time migration: wipe test data from localStorage ─────────────────────
+const TEST_MEMBER_IDS = ['m1','m2','m3','m4','m5','m6','m7','m8'];
+const TEST_EVENT_IDS  = ['e1','e2','e3','e4','e5'];
+
+function wipeSeedDataFromCache() {
+  if (localStorage.getItem('uniape_seed_wiped_v1')) return;
+  try {
+    const raw = localStorage.getItem('uniape_members');
+    if (raw) {
+      const members = JSON.parse(raw) as Member[];
+      const clean = members.filter(m => !TEST_MEMBER_IDS.includes(m.id));
+      localStorage.setItem('uniape_members', JSON.stringify(clean));
+    }
+    const rawE = localStorage.getItem('uniape_events');
+    if (rawE) {
+      const events = JSON.parse(rawE) as Event[];
+      const clean = events.filter(e => !TEST_EVENT_IDS.includes(e.id));
+      localStorage.setItem('uniape_events', JSON.stringify(clean));
+    }
+    const rawA = localStorage.getItem('uniape_attendances');
+    if (rawA) {
+      const atts = JSON.parse(rawA) as Attendance[];
+      const clean = atts.filter(a => !TEST_EVENT_IDS.includes(a.eventId) && !TEST_MEMBER_IDS.includes(a.memberId));
+      localStorage.setItem('uniape_attendances', JSON.stringify(clean));
+    }
+  } catch { /* ignore */ }
+  localStorage.setItem('uniape_seed_wiped_v1', '1');
+}
+
+wipeSeedDataFromCache();
+
 // ── Local cache helpers ──────────────────────────────────────────────────────
 
 function lsGet<T>(key: string, seed: T): T {
