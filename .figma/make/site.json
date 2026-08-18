@@ -1,0 +1,10 @@
+{
+  "description": "Streamline attendance tracking and certificate generation for UniAPe members with a user-friendly web application designed for presidents and secretaries.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

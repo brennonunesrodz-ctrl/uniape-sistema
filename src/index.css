@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --color-burgundy-50: #fdf2f4;
+  --color-burgundy-100: #fce7eb;
+  --color-burgundy-200: #f9d0d8;
+  --color-burgundy-300: #f4a9b8;
+  --color-burgundy-400: #ec7491;
+  --color-burgundy-500: #df4a6a;
+  --color-burgundy-600: #cb2b4e;
+  --color-burgundy-700: #a81e3c;
+  --color-burgundy-800: #8b1c36;
+  --color-burgundy-900: #6B1A2C;
+  --color-burgundy-950: #4a0f1c;
+
+  --color-gold-50: #fdf9ee;
+  --color-gold-100: #faf0d0;
+  --color-gold-200: #f4de9d;
+  --color-gold-300: #edc764;
+  --color-gold-400: #e5af3a;
+  --color-gold-500: #C4A35A;
+  --color-gold-600: #b8891d;
+  --color-gold-700: #986819;
+  --color-gold-800: #7c521b;
+  --color-gold-900: #66441a;
+
+  --color-cream: #FBF7F2;
+  --color-cream-dark: #F5EFE6;
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-cream);
+  color: #1a1a1a;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(107, 26, 44, 0.25); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(107, 26, 44, 0.45); }
+
+/* Print styles for certificates */
+@media print {
+  body * { visibility: hidden; }
+  #certificate-print, #certificate-print * { visibility: visible; }
+  #certificate-print {
+    position: fixed;
+    left: 0; top: 0;
+    width: 297mm; height: 210mm;
+    margin: 0;
+  }
+}
